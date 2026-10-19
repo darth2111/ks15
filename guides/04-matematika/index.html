@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Охота на медведя: математика</title><meta name="description" content="Полные формулы и примеры для тех, кому мало первых трёх."><style>
+:root{--bg:#f6efe2;--bg2:#fbf7ef;--fg:#2a2117;--muted:#76695a;--accent:#b5651d;--accent2:#7a3e0c;--card:#ffffff;--line:#e5d8c2;--quote:#fff1d6;--code:#f1e6d2;--shadow:0 6px 22px rgba(80,50,10,.10)}
+@media (prefers-color-scheme:dark){:root{--bg:#17130d;--bg2:#1d1913;--fg:#efe6d6;--muted:#b6aa95;--accent:#e6a65c;--accent2:#f2c48a;--card:#241f17;--line:#3a3226;--quote:#2d2517;--code:#332b1d;--shadow:0 6px 22px rgba(0,0,0,.45)}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:linear-gradient(180deg,var(--bg) 0,var(--bg2) 420px) fixed;color:var(--fg);font:17px/1.7 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.nav div{max-width:820px;margin:0 auto;padding:10px 18px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font-size:.92rem}
+header.nav b{color:var(--accent2);letter-spacing:.02em;margin-right:auto}
+header.nav a{color:var(--muted);text-decoration:none;padding:3px 0;border-bottom:2px solid transparent}
+header.nav a:hover{color:var(--accent);border-color:var(--accent)}
+header.nav a.cur{color:var(--accent2);border-color:var(--accent);font-weight:600}
+header.nav span.soon{color:var(--muted);opacity:.55}
+main{max-width:820px;margin:0 auto;padding:26px 18px 90px}
+h1{font-size:2.15rem;line-height:1.15;margin:.3em 0 .35em;color:var(--accent2)}
+h2{font-size:1.5rem;margin:2.2em 0 .5em;padding-top:.5em;border-top:3px solid var(--line);color:var(--accent2)}
+h3{font-size:1.2rem;margin:1.6em 0 .4em;color:var(--accent)}
+h4{font-size:1.05rem;margin:1.3em 0 .3em}
+h2 a.anchor,h3 a.anchor{color:inherit;text-decoration:none;opacity:0;margin-left:.3em}
+h2:hover a.anchor,h3:hover a.anchor{opacity:.5}
+p,li{margin:.55em 0}
+ul,ol{padding-left:1.4em}
+em{color:var(--muted)}
+img{max-width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block;margin:1.1em auto;box-shadow:var(--shadow);background:var(--card)}
+blockquote{margin:1.3em 0;padding:.7em 1.1em;background:var(--quote);border-left:6px solid var(--accent);border-radius:10px}
+blockquote p{margin:.45em 0}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;background:var(--card);border-radius:12px;overflow:hidden;font-size:.96rem;box-shadow:var(--shadow)}
+th,td{border:1px solid var(--line);padding:.55em .75em;text-align:left;vertical-align:top}
+th{background:var(--code);color:var(--accent2)}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--code) 35%,transparent)}
+code{background:var(--code);padding:.1em .35em;border-radius:5px}
+a{color:var(--accent)}
+details.toc{margin:1.2em 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.4em 1em;box-shadow:var(--shadow)}
+details.toc summary{cursor:pointer;font-weight:600;color:var(--accent2);padding:.3em 0}
+details.toc ol{margin:.3em 0 .6em;columns:1}
+@media(min-width:760px){details.toc ol{columns:2;column-gap:2em}}
+details.toc li{margin:.25em 0;break-inside:avoid}
+footer{max-width:820px;margin:0 auto;padding:0 18px 50px;color:var(--muted);font-size:.85rem}
+/* главная */
+.hero{padding:34px 0 10px}
+.hero h1{font-size:2.6rem}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:640px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:26px 0}
+.card{display:block;text-decoration:none;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 18px 16px;box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.card .n{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-bottom:8px}
+.card h3{margin:.1em 0 .3em;color:var(--accent2);font-size:1.25rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.card.soon{opacity:.55;pointer-events:none;border-style:dashed}
+.card .tag{float:right;font-size:.75rem;background:var(--code);color:var(--muted);border-radius:99px;padding:2px 10px}
+.tips{background:var(--quote);border-left:6px solid var(--accent);border-radius:12px;padding:12px 18px;margin:22px 0}
+p>code:only-child{display:block;padding:.55em 1em;margin:.3em 0;overflow-x:auto;border-left:4px solid var(--accent);border-radius:8px}
+.tw{overflow-x:auto;margin:1em 0;-webkit-overflow-scrolling:touch}
+.tw table{margin:0}
+table code{white-space:nowrap}
+@media print{body{background:#fff;color:#000}img,table{box-shadow:none}header.nav{display:none}}
+</style></head><body><header class="nav"><div><b>Охота на медведя</b><a href="../index.html">Главная</a><a href="../01-pamyatka/index.html">Памятка</a><a href="../02-prostymi-slovami/index.html">Простыми словами</a><a href="../03-pochemu-tak/index.html">Почему так</a><a href="../04-matematika/index.html" class="cur">Математика</a></div></header><main><h1 id="охота-на-медведя-математика">Охота на медведя: математика</h1>
+<p><strong>Гайды:</strong> <a href="../index.html">Главная</a> · <a href="../01-pamyatka/index.html">Памятка</a> · <a href="../02-prostymi-slovami/index.html">Простыми словами</a> · <a href="../03-pochemu-tak/index.html">Почему так</a> · Математика (вы здесь)</p>
+<p><em>Последний уровень: формулы целиком, с выводом и числами. Уровень математики не выше девятого класса: корни, неравенство <code>(a − b)² ≥ 0</code>, проценты и таблицы. Если что-то непонятно, вернитесь в «Почему так»: там то же самое, но медленнее.</em></p><details class="toc"><summary>Содержание</summary><ol><li><a href="#0-договоримся-об-обозначениях">0. Договоримся об обозначениях</a></li><li><a href="#1-модель-урона-участника">1. Модель урона участника</a></li><li><a href="#2-почему-корень-требует-равных-частей">2. Почему корень требует равных частей</a></li><li><a href="#3-состав-войск">3. Состав войск</a></li><li><a href="#4-уровни-войск">4. Уровни войск</a></li><li><a href="#5-атака--смертоносность">5. Атака × смертоносность</a></li><li><a href="#6-навыки-героев">6. Навыки героев</a></li><li><a href="#7-четыре-места-присоединившихся">7. Четыре места присоединившихся</a></li><li><a href="#8-куинн-или-соул">8. Куинн или Соул</a></li><li><a href="#9-как-сравнить-два-рейда">9. Как сравнить два рейда</a></li><li><a href="#10-насколько-точна-модель">10. Насколько точна модель</a></li><li><a href="#11-задачи-с-решениями">11. Задачи с решениями</a></li><li><a href="#12-короткая-шпаргалка-формул">12. Короткая шпаргалка формул</a></li></ol></details>
+<h2 id="0-договоримся-об-обозначениях">0. Договоримся об обозначениях<a class="anchor" href="#0-договоримся-об-обозначениях">#</a></h2>
+<div class="tw"><table><thead><tr><th>Символ</th><th>Что значит</th></tr></thead><tbody><tr><td><code>t</code></td><td>тип войск: пехота (<code>inf</code>), кавалерия (<code>cav</code>), стрелки (<code>arc</code>)</td></tr><tr><td><code>N_t</code></td><td>число солдат типа <code>t</code> в отправке; <code>N = N_inf + N_cav + N_arc</code></td></tr><tr><td><code>b_t</code></td><td>вес одного солдата типа <code>t</code> (на сколько он «сильнее» базового)</td></tr><tr><td><code>q_t</code></td><td>средняя сила уровней войск типа <code>t</code> (Т9 = 1)</td></tr><tr><td><code>A_t</code></td><td>множитель рейда для типа <code>t</code> из таблицы капитана (атака и смертоносность)</td></tr><tr><td><code>S</code></td><td>множитель навыков (капитана и четырёх присоединившихся)</td></tr><tr><td><code>Σ</code></td><td>знак суммы: <code>Σ_t</code> значит «сложить по трём типам»</td></tr><tr><td><code>w_t</code></td><td>собирательная «сила типа»: <code>w_t = b_t · q_t · A_t</code></td></tr></tbody></table></div>
+<p>Две оговорки. Во-первых, <strong>форма</strong> формул (корень, произведения, сложение внутри вида) проверена по данным настоящих рейдов, а <strong>числа</strong> внутри (<code>b_t</code>, шаг уровня, вес навыков с шансом) подобраны подгонкой и известны с погрешностью; погрешности указаны. Во-вторых, абсолютный масштаб урона нам не нужен: мы сравниваем варианты между собой, и общий множитель сокращается.</p>
+<h2 id="1-модель-урона-участника">1. Модель урона участника<a class="anchor" href="#1-модель-урона-участника">#</a></h2>
+<p>Урон одного участника рейда:</p>
+<p><code>D = K · Σ_t [ √(N_t) · b_t · q_t · A_t ] · S</code></p>
+<p>где <code>K</code> один и тот же для всех, а:</p>
+<ul><li><code>A_t = (1 + a_t + a_g) · (1 + l_t + l_g)</code>: <strong>атака</strong> <code>a_t</code> и <strong>смертоносность</strong> <code>l_t</code> типа плюс общие строки <code>a_g</code>, <code>l_g</code> из таблицы капитана (все величины в долях: 25 % = 0,25);</li><li><code>S = (1 + ΣA_нав) · (1 + ΣL_нав) · Π(1 + c·p·x)</code>: навыки атаки складываются, навыки смертоносности складываются, затем всё перемножается; последнее произведение относится к навыкам «с шансом» (см. п. 6);</li><li><code>q_t = Σ_L n_{t,L} · u^(L − 9) / N_t</code>: усреднение силы уровней, <code>u</code> — шаг уровня (п. 4).</li></ul>
+<p>Проверка структуры (на 12 игроках двух рейдов с известным составом): если брать корень <strong>от числа войск каждого типа отдельно</strong>, остаток модели около 1 %; если брать один корень от всей армии, остаток около 7 %; если брать корень по группам «тип × уровень», остаток 17–45 %. Поэтому в формуле корень стоит именно по типам.</p>
+<p>Подобранные параметры (общая подгонка по 35 рейдам, 226 игрокам; остаток 1,74 %):</p>
+<div class="tw"><table><thead><tr><th>Параметр</th><th>Значение</th><th>Допустимо</th></tr></thead><tbody><tr><td>шаг уровня <code>u</code> (Т8→Т9, Т7→Т8 и т. д.)</td><td>1,19</td><td>1,18–1,20</td></tr><tr><td>вес стрелка <code>b_arc</code></td><td>4,4</td><td>4,0 × 1,1 («Дальний удар»)</td></tr><tr><td>вес кавалериста <code>b_cav</code></td><td>2,6</td><td>2,3–2,9</td></tr><tr><td>вес пехотинца <code>b_inf</code></td><td>1,2</td><td>0,8–1,4</td></tr><tr><td>отношение кавалерист / стрелок <code>r</code></td><td>0,59</td><td></td></tr><tr><td>отношение пехотинец / стрелок <code>r_i</code></td><td>0,27</td><td>0,18–0,32</td></tr><tr><td>вес навыков «с шансом» <code>c</code></td><td>0,75–0,85</td><td></td></tr></tbody></table></div>
+<p>Вес пехоты определён хуже остальных: чистых «пехотных» отправок в данных почти нет.</p>
+<h2 id="2-почему-корень-требует-равных-частей">2. Почему корень требует равных частей<a class="anchor" href="#2-почему-корень-требует-равных-частей">#</a></h2>
+<h3 id="лемма-две-части">Лемма (две части)<a class="anchor" href="#лемма-две-части">#</a></h3>
+<p>Для любых неотрицательных <code>x</code> и <code>y</code>:</p>
+<p><code>(√x + √y)² ≤ 2 · (x + y)</code></p>
+<p><em>Доказательство.</em> Раскроем скобки: <code>x + 2√(xy) + y ≤ 2x + 2y</code>. Перенесём всё в одну сторону: <code>0 ≤ x − 2√(xy) + y = (√x − √y)²</code>. Квадрат неотрицателен, неравенство верно. Равенство достигается только при <code>x = y</code>. ∎</p>
+<p>Значит, разделив армию <code>N</code> на две части, максимум урона <code>√x + √y</code> получается при <code>x = y = N/2</code>, и равен <code>√(2N)</code>: ровно в <code>√2 ≈ 1,41</code> раза больше, чем одним ударом <code>√N</code>.</p>
+<h3 id="много-частей">Много частей<a class="anchor" href="#много-частей">#</a></h3>
+<p>Разобьём армию на <code>k</code> равных частей. Урон каждой <code>√(N/k)</code>, всего</p>
+<p><code>k · √(N/k) = √k · √N</code></p>
+<p>То есть <strong>урон растёт в <code>√k</code> раз</strong>. Значения (с учётом того, что одна отправка = 100 %):</p>
+<div class="tw"><table><thead><tr><th><code>k</code></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead><tbody><tr><td><code>√k</code>, %</td><td>100</td><td>141</td><td>173</td><td>200</td><td>224</td><td>245</td></tr></tbody></table></div>
+<img src="images/marches.png" alt="Урон растёт вместе с числом равных отправок" loading="lazy">
+<p>Прирост от каждой следующей отправки уменьшается: от первой до второй +41 пункт, от пятой до шестой +21. Но он всегда положителен, поэтому армию лучше разбить на столько отправок, сколько позволяют марши.</p>
+<h3 id="рейды-разной-силы">Рейды разной силы<a class="anchor" href="#рейды-разной-силы">#</a></h3>
+<p>Пусть отправки идут в рейды с множителями <code>m_1, m_2, …</code> и в отправку <code>i</code> уходит <code>N_i</code> солдат при <code>Σ N_i = N</code>. Нужно максимизировать <code>Σ m_i · √N_i</code>.</p>
+<p><strong>Утверждение.</strong> <code>Σ m_i · √N_i ≤ √(Σ m_i²) · √N</code>, и равенство достигается при <code>N_i</code> пропорциональных <code>m_i²</code>.</p>
+<p><em>Доказательство для двух частей</em> (обозначим их <code>x</code> и <code>y</code>): <code>(m_1² + m_2²)(x + y) − (m_1√x + m_2√y)² = m_1²y + m_2²x − 2m_1m_2√(xy) = (m_1√y − m_2√x)² ≥ 0</code>. Значит, <code>(m_1√x + m_2√y)² ≤ (m_1² + m_2²)(x + y)</code>, а равенство при <code>m_1√y = m_2√x</code>, то есть <code>y/x = m_2²/m_1²</code>. Для трёх частей разность правой и левой частей равна сумме трёх таких квадратов (по одному на каждую пару частей), и вывод тот же. ∎</p>
+<p><strong>Пример.</strong> Рейды силой 1 и 1,5. Доли армии: <code>1 : 2,25</code>, то есть 31 % и 69 %. Максимум <code>√(1 + 2,25) · √N = 1,803 √N</code>. Если делить поровну: <code>(1 + 1,5) · √(N/2) = 1,768 √N</code>. Потеря <code>1 − 1,768/1,803 ≈ 2 %</code>. Поэтому небольшую разницу в силе рейдов учитывать не стоит, а вот разница в два-три раза уже заметна.</p>
+<h2 id="3-состав-войск">3. Состав войск<a class="anchor" href="#3-состав-войск">#</a></h2>
+<h3 id="оптимальные-доли">Оптимальные доли<a class="anchor" href="#оптимальные-доли">#</a></h3>
+<p>Для одной отправки максимизируем <code>F = Σ_t w_t · √(N_t)</code> при <code>Σ N_t = N</code>.</p>
+<p><strong>Утверждение.</strong> <code>F ≤ √(Σ w_t²) · √N</code>, и максимум достигается при</p>
+<p><code>N_t = N · w_t² / Σ w²</code>.</p>
+<p>Доказательство то же, что в разделе «Рейды разной силы» (там вместо <code>m_i</code> стоят <code>w_t</code>). Значит, <strong>доля типа пропорциональна квадрату его силы</strong>.</p>
+<h3 id="числа">Числа<a class="anchor" href="#числа">#</a></h3>
+<p>Если у всех типов одинаковые множители рейда (<code>A_t</code> равны), берём <code>w_arc = 1</code>, <code>w_cav = r = 0,59</code>, <code>w_inf = r_i = 0,27</code>:</p>
+<div class="tw"><table><thead><tr><th>Тип</th><th><code>w</code></th><th><code>w²</code></th><th>Доля, %</th></tr></thead><tbody><tr><td>стрелки</td><td>1,00</td><td>1,000</td><td>70,4</td></tr><tr><td>кавалерия</td><td>0,59</td><td>0,348</td><td>24,5</td></tr><tr><td>пехота</td><td>0,27</td><td>0,073</td><td>5,1</td></tr><tr><td><strong>сумма</strong></td><td></td><td><strong>1,421</strong></td><td>100</td></tr></tbody></table></div>
+<p>Максимум <code>√1,421 = 1,192</code> от <code>√N</code>. Чистые стрелки дают <code>1,000</code>, то есть <strong>на <code>1 − 1/1,192 ≈ 16 %</code> меньше</strong>.</p>
+<p>Если у капитана множитель кавалерии другой, <code>w_cav = 0,59 · A_cav / A_arc</code>:</p>
+<div class="tw"><table><thead><tr><th><code>A_cav / A_arc</code></th><th><code>w_cav</code></th><th>стрелки</th><th>кавалерия</th><th>пехота</th></tr></thead><tbody><tr><td>0,7</td><td>0,41</td><td>80 %</td><td>14 %</td><td>6 %</td></tr><tr><td>1,0</td><td>0,59</td><td>70 %</td><td>25 %</td><td>5 %</td></tr><tr><td>1,3</td><td>0,77</td><td>60 %</td><td>35 %</td><td>4 %</td></tr></tbody></table></div>
+<p>Пехота взята с <code>w = 0,27</code>.</p>
+<h3 id="насколько-страшно-промахнуться">Насколько страшно промахнуться<a class="anchor" href="#насколько-страшно-промахнуться">#</a></h3>
+<p>Ценность состава относительно оптимума <code>V = F / F_max</code>. Считаем при <code>w = (1 ; 0,59 ; 0,27)</code>.</p>
+<p><strong>Доля кавалерии при пехоте 5 %:</strong></p>
+<div class="tw"><table><thead><tr><th>Кавалерия</th><th>0 %</th><th>10 %</th><th>15 %</th><th>20 %</th><th><strong>25 %</strong></th><th>30 %</th><th>35 %</th><th>40 %</th><th>50 %</th></tr></thead><tbody><tr><td><code>V</code>, %</td><td>86,8</td><td>98,1</td><td>99,3</td><td>99,9</td><td><strong>100</strong></td><td>99,8</td><td>99,3</td><td>98,6</td><td>96,3</td></tr></tbody></table></div>
+<p><strong>Доля пехоты при кавалерии 24,5 %:</strong></p>
+<div class="tw"><table><thead><tr><th>Пехота</th><th><strong>0 %</strong></th><th>1 %</th><th>2 %</th><th>3 %</th><th><strong>5 %</strong></th><th>10 %</th><th>15 %</th><th>20 %</th></tr></thead><tbody><tr><td><code>V</code>, %</td><td>97,4</td><td>99,2</td><td>99,6</td><td>99,9</td><td><strong>100</strong></td><td>99,6</td><td>98,5</td><td>97,1</td></tr></tbody></table></div>
+<p><strong>Готовые составы:</strong></p>
+<div class="tw"><table><thead><tr><th>Состав (пех / кав / стр)</th><th><code>V</code>, %</th></tr></thead><tbody><tr><td>3 / 28 / 69</td><td>99,8</td></tr><tr><td>2 / 23 / 75</td><td>99,6</td></tr><tr><td>10 / 10 / 80</td><td>97,8</td></tr><tr><td>0 / 0 / 100</td><td>83,9</td></tr></tbody></table></div>
+<img src="images/flat.png" alt="Вершина плоская: кавалерия от 15 до 35 % даёт потерю меньше 1 %" loading="lazy">
+<p>Почему вершина плоская: вблизи максимума потеря растёт как квадрат отклонения (в точке максимума любая гладкая кривая похожа на параболу). Отклонение в 10 п. п. даёт потерю порядка 0,7–1 %, а при 5 п. п. около 0,2 %. Зато «ноль» кавалерии или пехоты уводит далеко от вершины, потому что корень вблизи нуля растёт круче всего (это тот же эффект, что в «первая тысяча важнее десятой»).</p>
+<h2 id="4-уровни-войск">4. Уровни войск<a class="anchor" href="#4-уровни-войск">#</a></h2>
+<p>Сила <code>q</code> средняя по уровням: если у вас <code>n_L</code> солдат уровня <code>L</code> (IX = 9), то</p>
+<p><code>q = Σ_L n_L · u^(L − 9) / N</code>, <code>u = 1,19</code></p>
+<p>Например, 9 000 войск Т9 и 1 000 Т8 дают <code>q = (9000 + 1000/1,19)/10 000 = 0,984</code>.</p>
+<h3 id="отправлять-ли-слабых">Отправлять ли слабых?<a class="anchor" href="#отправлять-ли-слабых">#</a></h3>
+<p>Сравним <code>N</code> сильных (сила 1) и <code>N</code> сильных плюс <code>Δ</code> слабых (сила <code>s &lt; 1</code>):</p>
+<p><code>(N + sΔ)/√(N + Δ)</code> против <code>√N</code>.</p>
+<p>Прирост есть, если <code>(N + sΔ)² &gt; N(N + Δ)</code>, то есть <code>2Ns + s²Δ &gt; N</code>, откуда при <code>Δ</code>, малом против <code>N</code>, получаем <code>s &gt; 1/2</code>. <strong>Добавлять слабый уровень выгодно, пока он не слабее примерно вдвое</strong>: при шаге 1,19 для армии Т9 это даже Т5 (<code>1,19^(−4) ≈ 0,5</code>). Выгода уменьшается, но остаётся.</p>
+<p>Пример: 9 000 Т9 + 1 000 Т8: все 10 000 дают <code>√10 000 · 0,984 = 98,4</code>; только Т9: <code>√9 000 = 94,9</code>; 10 000 Т9 было бы <code>100</code>. Слабая тысяча даёт +3,7 % к урону армии без неё (98,4 против 94,9).</p>
+<h3 id="переучить-или-обучить-новых">Переучить или обучить новых?<a class="anchor" href="#переучить-или-обучить-новых">#</a></h3>
+<p>Переучивание на уровень выше умножает <code>q</code> на <code>u = 1,19</code>. Чтобы получить тот же прирост урона увеличением <code>N</code>, надо <code>√(N'/N) = 1,19</code>, то есть <code>N'/N = 1,19² = 1,416</code>: <strong>около +42 % солдат</strong>. При этом переучивание не требует лишних мест в марше.</p>
+<h2 id="5-атака--смертоносность">5. Атака × смертоносность<a class="anchor" href="#5-атака--смертоносность">#</a></h2>
+<p><code>A = (1 + a)(1 + l)</code>, где <code>a</code>, <code>l</code> — суммарные атака и смертоносность типа (с общими строками), в долях.</p>
+<h3 id="ровное-лучше-перекошенного">Ровное лучше перекошенного<a class="anchor" href="#ровное-лучше-перекошенного">#</a></h3>
+<p>Положим <code>p = 1 + a</code>, <code>q = 1 + l</code>. При фиксированной сумме <code>p + q</code> произведение наибольшее при <code>p = q</code>, потому что</p>
+<p><code>(p + q)² / 4 − pq = (p − q)² / 4 ≥ 0</code>.</p>
+<p>Пример: атака 230 %, смертоносность 70 %: <code>3,3 × 1,7 = 5,61</code>; по 150 %: <code>2,5 × 2,5 = 6,25</code>. Разница <code>+11,4 %</code>.</p>
+<img src="images/rect.png" alt="Прямоугольники с одним и тем же периметром" loading="lazy">
+<h3 id="куда-добавлять">Куда добавлять<a class="anchor" href="#куда-добавлять">#</a></h3>
+<p>Если добавить <code>δ</code> к <code>p</code>, произведение вырастет на <code>δ · q</code>; если к <code>q</code>, то на <code>δ · p</code>. Значит, <strong>выгоднее добавлять к той стороне, у которой «соседка» больше, то есть к меньшей стороне.</strong> Пример с <code>p = 3,3</code>, <code>q = 1,7</code> и <code>δ = 0,1</code>: к <code>q</code> прибавка <code>0,1 · 3,3 = 0,33</code> (+5,9 %), к <code>p</code>: <code>0,1 · 1,7 = 0,17</code> (+3,0 %).</p>
+<h2 id="6-навыки-героев">6. Навыки героев<a class="anchor" href="#6-навыки-героев">#</a></h2>
+<p>Походные навыки капитана и первого героя присоединившегося:</p>
+<ul><li>у героев-SSR три навыка, у SR и R два;</li><li>атака и смертоносность растут на +5 % за уровень (до +25 % на пятом); у Хильды +3 % за уровень (до +15 %);</li><li><strong>складываем внутри вида, перемножаем между видами</strong>:</li></ul>
+<p><code>S_тв = (1 + Σ прибавок атаки) · (1 + Σ прибавок смертоносности)</code>.</p>
+<h3 id="навыки-с-шансом">Навыки «с шансом»<a class="anchor" href="#навыки-с-шансом">#</a></h3>
+<p>Если навык срабатывает с вероятностью <code>p</code> и усиливает урон на долю <code>x</code>, его вклад в среднем <code>(1 + p · x)</code>. Но по данным рейдов реальный вклад меньше: <code>(1 + c · p · x)</code> с <code>c ≈ 0,75–0,85</code> (причина кроется в деталях боевой механики; <code>c</code> определён из данных, а не выведен). Пример: Куинн, <code>p = 0,5</code>, <code>x = 0,5</code>:</p>
+<div class="tw"><table><thead><tr><th><code>c</code></th><th>0,5</th><th>0,75</th><th>1,0</th></tr></thead><tbody><tr><td>вклад</td><td>1,125</td><td>1,19</td><td>1,25</td></tr></tbody></table></div>
+<p>В расчётах брали <code>c = 0,75</code>. Случайность тоже настоящая: у лучников есть «Залп» (шанс 10 %, что атака поражает дважды), и между рейдами с одинаковыми цифрами урон расходится на 6–9 %. Эта разница общая для <strong>всех участников одного рейда</strong>: в одном рейде у всех «повезло» или «не повезло» вместе.</p>
+<h2 id="7-четыре-места-присоединившихся">7. Четыре места присоединившихся<a class="anchor" href="#7-четыре-места-присоединившихся">#</a></h2>
+<p><strong>Правило отбора.</strong> Берётся первый правый навык первого героя каждого присоединившегося, навыки сортируются по уровню, при равном уровне раньше зашедший выше (так принято в расчётах; точное правило равенства не проверено), верхние четыре начинают действовать. Пятый уровень закрепляется.</p>
+<p><strong>Вклад четвёрки.</strong> Пусть у капитана суммы атаки и смертоносности навыков <code>S_a</code>, <code>S_l</code>, а четвёрка присоединившихся добавляет <code>Σa</code> и <code>Σl</code>. Рост урона всего рейда:</p>
+<p><code>M = (1 + S_a + Σa)(1 + S_l + Σl) / ((1 + S_a)(1 + S_l))</code></p>
+<p>Положим <code>S_a = S_l = 0,25</code> (по одному навыку каждого вида на 5 уровне). Базовый множитель <code>1,25 × 1,25 = 1,5625</code>.</p>
+<div class="tw"><table><thead><tr><th>В четырёх местах</th><th><code>(1 + S_a + Σa)</code></th><th><code>(1 + S_l + Σl)</code></th><th>Произведение</th><th><code>M</code></th></tr></thead><tbody><tr><td>ничего полезного</td><td>1,25</td><td>1,25</td><td>1,5625</td><td>1,00</td></tr><tr><td>Хильда</td><td>1,40</td><td>1,25</td><td>1,750</td><td>1,12</td></tr><tr><td>Ченко (или Ёну)</td><td>1,25</td><td>1,50</td><td>1,875</td><td>1,20</td></tr><tr><td>два Ченко/Ёну</td><td>1,25</td><td>1,75</td><td>2,1875</td><td>1,40</td></tr><tr><td>Ченко + Амане</td><td>1,50</td><td>1,50</td><td>2,250</td><td>1,44</td></tr><tr><td>три Ченко/Ёну</td><td>1,25</td><td>2,00</td><td>2,500</td><td>1,60</td></tr><tr><td>четыре Ченко/Ёну</td><td>1,25</td><td>2,25</td><td>2,8125</td><td>1,80</td></tr><tr><td>два Ч/Ё + Амане + Хильда</td><td>1,65</td><td>1,75</td><td>2,8875</td><td>1,85</td></tr><tr><td><strong>два Ч/Ё + два Амане</strong></td><td><strong>1,75</strong></td><td><strong>1,75</strong></td><td><strong>3,0625</strong></td><td><strong>1,96</strong></td></tr><tr><td>то же, но все навыки на 4 уровне</td><td>1,65</td><td>1,65</td><td>2,7225</td><td>1,74</td></tr></tbody></table></div>
+<img src="images/slots.png" alt="Рост урона рейда от заполненной четвёрки" loading="lazy">
+<p>Из таблицы видно два эффекта:</p>
+<ol><li><strong>Убывающая отдача внутри вида.</strong> Первый Ченко даёт <code>1,50/1,25 = ×1,20</code>, второй <code>1,75/1,50 = ×1,17</code>, третий <code>2,00/1,75 = ×1,14</code>, четвёртый <code>×1,125</code>. Каждый следующий «разбавляется» всё большей суммой.</li><li><strong>Разные виды перемножаются.</strong> Поэтому две атаки и две смертоносности (<code>×1,96</code>) лучше четырёх смертоносностей (<code>×1,80</code>): это та же история с прямоугольником.</li></ol>
+<p>Зависимость от капитана: чем больше навыков у самого капитана, тем меньше прибавка. Один Ченко при <code>S_l = 0</code> даёт <code>×1,25</code>, при <code>0,25</code> <code>×1,20</code>, при <code>0,5</code> <code>×1,17</code>.</p>
+<h2 id="8-куинн-или-соул">8. Куинн или Соул<a class="anchor" href="#8-куинн-или-соул">#</a></h2>
+<p>Сравнение двух героев-стрелков при одинаковом снаряжении (данные карточек «Экспедиция» и таблиц «Бонус войск» одного и того же рейда с каждым из героев):</p>
+<div class="tw"><table><thead><tr><th></th><th>Куинн</th><th>Соул</th><th>Разница</th></tr></thead><tbody><tr><td>атака стрелков</td><td>+196,27 %</td><td>+181,42 %</td><td>−14,85 п. п.</td></tr><tr><td>смертоносность стрелков</td><td>+180,64 %</td><td>+185,64 %</td><td>+5,00 п. п.</td></tr><tr><td>навык</td><td>«с шансом»</td><td>+25 % смертоносности</td><td></td></tr></tbody></table></div>
+<p>Общие строки таблицы: атака войск <code>a_g = 0,423</code>, смертоносность войск <code>l_g = 0,295</code>.</p>
+<p><strong>Шаг 1. Множитель стрелков <code>A_arc</code>:</strong></p>
+<ul><li>Куинн: <code>(1 + 1,963 + 0,423)(1 + 1,806 + 0,295) = 3,386 × 3,101 = 10,50</code></li><li>Соул: <code>(1 + 1,814 + 0,423)(1 + 1,856 + 0,295) = 3,237 × 3,151 = 10,20</code></li></ul>
+<p>Отношение <code>10,20 / 10,50 = 0,972</code>. Стрелки дают около 70 % урона, поэтому общий урон падает на <code>0,70 · 2,8 % ≈ 2,0 %</code>.</p>
+<p><strong>Шаг 2. Множитель навыков <code>S</code>.</strong> Допустим, у капитана навыки смертоносности дают <code>S_l = 0,20</code> (например, один Явель 4 уровня), в остальном навыки одинаковы. Тогда часть <code>S</code>, которая зависит от героя стрелков:</p>
+<ul><li>с Куинном <code>(1 + S_l) · 1,1875 = 1,20 × 1,1875 = 1,425</code> (шансовый навык при <code>c = 0,75</code>);</li><li>с Соулом <code>(1 + S_l + 0,25) = 1,45</code>;</li><li>отношение <code>1,45 / 1,425 ≈ 1,018</code> в пользу Соула.</li></ul>
+<p><strong>Шаг 3. Итог.</strong> <code>0,980 × 1,018 ≈ 0,998</code>. <strong>Практически ничья.</strong></p>
+<p>Зависимость от <code>c</code>: при <code>c = 0,5</code> итог <code>×1,05</code> в пользу Соула, при <code>c = 1,0</code> <code>×0,95</code> в пользу Куинна. А при малой сумме смертоносности у капитана Соул сильнее: те же <code>+0,25</code> к сумме <code>1,0</code> дают <code>×1,125</code>, а к сумме <code>3,0</code> только <code>×1,06</code>.</p>
+<p><strong>Оговорка.</strong> Сравнение сделано для одинаковых условий. Реальные герои различаются <strong>звёздами</strong> и <strong>уровнем навыка</strong>: у Соула 3 звезды и навык 4 уровня (+20 %) дадут меньше, чем в таблице, а Куинн с 4 звёздами и навыком 5 уровня выиграет. Подставляйте свои цифры из блока «Экспедиция» и из «Бонуса рейда»: арифметика та же.</p>
+<h2 id="9-как-сравнить-два-рейда">9. Как сравнить два рейда<a class="anchor" href="#9-как-сравнить-два-рейда">#</a></h2>
+<p>Для одной таблицы капитана множитель стрелков <code>A_arc</code> и общий множитель рейда определяются прежде всего смертоносностью: у капитанов атака отличается мало, а смертоносность в разы. В числах: атака <code>190 %</code> против <code>200 %</code> даёт <code>2,9</code> против <code>3,0</code> (разница 3,4 %), а смертоносность <code>70 %</code> против <code>130 %</code> даёт <code>1,7</code> против <code>2,3</code> (разница 35 %).</p>
+<p>Проверка: для 30 таблиц реальных рейдов мы сравнили порядок по «Смертоносности стрелков» (с добавлением общей «Смертоносности войск») и порядок по точному расчёту. Коэффициент ранговой корреляции Спирмена <code>ρ = 0,95</code>. Для сравнения порядок по «силе» капитана (сумма очков его героев) даёт <code>ρ ≈ 0,5</code>: пользоваться им нельзя.</p>
+<p>Ограничение: <strong>навыки героев в таблицу не входят</strong>, они вносят множитель <code>S</code>. Если у двух рейдов смертоносность почти одна, смотрите на навыки капитана и на четыре места присоединившихся.</p>
+<h2 id="10-насколько-точна-модель">10. Насколько точна модель<a class="anchor" href="#10-насколько-точна-модель">#</a></h2>
+<ul><li>Остаток модели (отношение предсказанного урона к фактическому): стандартное отклонение <code>1,74 %</code> на общей выборке.</li><li>Около 85 % игроков укладываются в <code>±2 %</code>.</li><li>Между рейдами с одинаковыми цифрами из-за случайности расхождение <code>6–9 %</code>, одно и то же для всех участников конкретного рейда.</li><li>Значит, различия меньше 2–3 % в расчётах искать не нужно: они тонут в шуме.</li></ul>
+<h3 id="что-не-проверено">Что не проверено<a class="anchor" href="#что-не-проверено">#</a></h3>
+<ul><li><strong>Т10:</strong> по карточкам войск шаг уровня Т9→Т10 примерно <code>+15 %</code> (стрелки), <code>+17 %</code> (кавалерия), <code>+24 %</code> (пехота), но в боях это не проверялось.</li><li><strong>Вес пехоты</strong> <code>b_inf</code> определён косвенно (<code>1,2 ± 0,2</code>).</li><li><strong>Сложение или умножение</strong> общей и типовой частей <code>A_t</code>: данные не различают, на выводы это не влияет.</li><li><strong>Снаряжение героев:</strong> смертоносность из снаряжения известна не для всех героев.</li></ul>
+<h2 id="11-задачи-с-решениями">11. Задачи с решениями<a class="anchor" href="#11-задачи-с-решениями">#</a></h2>
+<p><strong>Задача 1.</strong> Армия 20 000 солдат одного типа, четыре марша. Во сколько раз урон больше, чем одной отправкой? <em>Решение:</em> <code>√4 = 2</code>.</p>
+<p><strong>Задача 2.</strong> Рейды силой 1, 2 и 3. Как разделить 14 000 солдат? <em>Решение:</em> доли пропорциональны <code>1 : 4 : 9</code>, всего <code>14</code> частей: по 1 000, 4 000 и 9 000 солдат.</p>
+<p><strong>Задача 3.</strong> У капитана кавалерия на 30 % сильнее стрелков (<code>A_cav / A_arc = 1,3</code>). Какова оптимальная доля кавалерии при <code>r_i = 0,27</code>? <em>Решение:</em> <code>w_cav = 0,59 × 1,3 = 0,767</code>, <code>w² = 0,588</code>; сумма <code>1 + 0,588 + 0,073 = 1,661</code>; доля <code>0,588 / 1,661 = 35 %</code>.</p>
+<p><strong>Задача 4.</strong> Рейд А: атака 250 %, смертоносность 30 %. Рейд Б: по 140 %. Суммы одинаковые (280). Кто сильнее? <em>Решение:</em> А: <code>3,5 × 1,3 = 4,55</code>; Б: <code>2,4 × 2,4 = 5,76</code>. Рейд Б сильнее на 27 %: перекос дорого обходится.</p>
+<p><strong>Задача 5.</strong> Капитан: один навык атаки +25 % и один смертоносности +25 %. Присоединились Амане и Ёну (оба 5 уровня). Насколько вырос урон рейда? <em>Решение:</em> <code>(1 + 0,25 + 0,25)(1 + 0,25 + 0,25) / 1,5625 = 2,25 / 1,5625 = 1,44</code>. На 44 %.</p>
+<p><strong>Задача 6.</strong> Армия: 6 000 Т9 и 4 000 Т8. Сколько «эквивалентных» Т9, и какова потеря против 10 000 Т9? <em>Решение:</em> <code>q = (6000 + 4000/1,19)/10 000 = 0,936</code>, урон <code>0,936 × 100 = 93,6</code>: потеря 6,4 %.</p>
+<h2 id="12-короткая-шпаргалка-формул">12. Короткая шпаргалка формул<a class="anchor" href="#12-короткая-шпаргалка-формул">#</a></h2>
+<div class="tw"><table><thead><tr><th>Что</th><th>Формула</th></tr></thead><tbody><tr><td>урон участника</td><td><code>D = K · Σ_t √N_t · b_t · q_t · A_t · S</code></td></tr><tr><td>множитель типа</td><td><code>A_t = (1 + a_t + a_g)(1 + l_t + l_g)</code></td></tr><tr><td>множитель навыков</td><td><code>S = (1 + ΣA)(1 + ΣL) · Π(1 + c·p·x)</code></td></tr><tr><td><code>k</code> равных отправок</td><td><code>√k</code> раз</td></tr><tr><td>рейды силой <code>m_i</code></td><td>доли <code>∝ m_i²</code>, максимум <code>√(Σ m²) · √N</code></td></tr><tr><td>состав</td><td>доли <code>∝ w_t²</code>, <code>w_t = b_t · q_t · A_t</code></td></tr><tr><td>переучивание на уровень выше</td><td><code>u² = 1,42</code> (≈ +42 % солдат)</td></tr><tr><td>четыре места</td><td><code>M = (1 + S_a + Σa)(1 + S_l + Σl) / ((1 + S_a)(1 + S_l))</code></td></tr></tbody></table></div>
+<p>Если нашли в формулах ошибку, значит, медведь здесь ни при чём.</p></main><footer>Гайды по охоте на медведя · «Война за трон»</footer></body></html>
