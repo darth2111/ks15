@@ -236,7 +236,7 @@ var tg=document.getElementById('tg');if(!tg)return;
 var SUN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.9 1.9M16.8 16.8l1.9 1.9M18.7 5.3l-1.9 1.9M7.2 16.8l-1.9 1.9"/></svg>';
 var MOON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a.7.7 0 0 0-.9-.9A9.6 9.6 0 1 0 21.4 15.5a.7.7 0 0 0-.9-.9z"/></svg>';
 function cur(){return document.documentElement.getAttribute('data-theme')==='dark'?'dark':'light'}
-function draw(){var d=cur()==='dark';tg.innerHTML=d?SUN:MOON;tg.title=d?'Включить светлую тему':'Включить тёмную тему'}
+function draw(){var d=cur()==='dark';tg.innerHTML=d?SUN:MOON;tg.title=d?'Включить светлую тему':'Включить тёмную тему';var a=document.getElementById('pnglink');if(a){var n='Медведь_01_Памятка_'+(d?'темная':'светлая')+'.png';a.setAttribute('href','../download/'+n);a.setAttribute('download',n)}}
 tg.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('bear-theme',n)}catch(e){}draw()});
 draw();
 })();
