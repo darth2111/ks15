@@ -1,19 +1,24 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Охота на медведя: математика</title><meta name="description" content="Полные формулы и примеры для тех, кому мало первых трёх."><style>
-:root{--bg:#f6efe2;--bg2:#fbf7ef;--fg:#2a2117;--muted:#76695a;--accent:#b5651d;--accent2:#7a3e0c;--card:#ffffff;--line:#e5d8c2;--quote:#fff1d6;--code:#f1e6d2;--shadow:0 2px 8px rgba(80,50,10,.10)}
-@media (prefers-color-scheme:dark){:root{--bg:#17130d;--bg2:#1d1913;--fg:#efe6d6;--muted:#b6aa95;--accent:#e6a65c;--accent2:#f2c48a;--card:#241f17;--line:#3a3226;--quote:#2d2517;--code:#332b1d;--shadow:0 2px 8px rgba(0,0,0,.45)}}
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Охота на медведя: математика</title><meta name="description" content="Полные формулы и примеры для тех, кому мало первых трёх."><script>(function(){var t=null;try{t=localStorage.getItem('bear-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';try{localStorage.setItem('bear-theme',t)}catch(e){}}document.documentElement.setAttribute('data-theme',t)})()</script><style>@font-face{font-family:"Nunito";font-weight:400;font-style:normal;font-display:swap;src:url(../fonts/nunito-cyrillic-400.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:"Nunito";font-weight:400;font-style:normal;font-display:swap;src:url(../fonts/nunito-latin-400.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Nunito";font-weight:700;font-style:normal;font-display:swap;src:url(../fonts/nunito-cyrillic-700.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:"Nunito";font-weight:700;font-style:normal;font-display:swap;src:url(../fonts/nunito-latin-700.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Nunito";font-weight:900;font-style:normal;font-display:swap;src:url(../fonts/nunito-cyrillic-900.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:"Nunito";font-weight:900;font-style:normal;font-display:swap;src:url(../fonts/nunito-latin-900.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}:root{--bg:#f6efe2;--bg2:#fbf7ef;--fg:#2a2117;--muted:#76695a;--accent:#b5651d;--accent2:#7a3e0c;--card:#ffffff;--line:#e5d8c2;--quote:#fff1d6;--code:#f1e6d2;--shadow:0 2px 8px rgba(80,50,10,.10)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#17130d;--bg2:#1d1913;--fg:#efe6d6;--muted:#b6aa95;--accent:#e6a65c;--accent2:#f2c48a;--card:#241f17;--line:#3a3226;--quote:#2d2517;--code:#332b1d;--shadow:0 2px 8px rgba(0,0,0,.45)}}
+:root[data-theme=dark]{--bg:#17130d;--bg2:#1d1913;--fg:#efe6d6;--muted:#b6aa95;--accent:#e6a65c;--accent2:#f2c48a;--card:#241f17;--line:#3a3226;--quote:#2d2517;--code:#332b1d;--shadow:0 2px 8px rgba(0,0,0,.45)}
+:root{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark}}
+
 *{box-sizing:border-box}
 html,body{overscroll-behavior:none}
 html{scroll-padding-top:70px;background:var(--bg)}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 "Nunito","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
 header.nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
-header.nav div{max-width:820px;margin:0 auto;padding:10px 18px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font-size:.92rem}
+header.nav div{max-width:920px;margin:0 auto;padding:10px 18px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:.92rem}
 header.nav b{color:var(--accent2);letter-spacing:.02em;margin-right:auto}
 header.nav a{color:var(--muted);text-decoration:none;padding:3px 0;border-bottom:2px solid transparent}
 header.nav a:hover{color:var(--accent);border-color:var(--accent)}
 header.nav a.cur{color:var(--accent2);border-color:var(--accent);font-weight:600}
 header.nav a.pdf{background:var(--accent);color:#fff;border-radius:99px;padding:2px 12px;border-bottom:0;font-weight:600}
 header.nav a.pdf:hover{opacity:.85;color:#fff}
+header.nav .tg{display:inline-grid;place-items:center;width:32px;height:32px;padding:0;border:1px solid var(--line);background:var(--card);color:var(--accent2);border-radius:50%;cursor:pointer}
+header.nav .tg svg{width:18px;height:18px;display:block}
+header.nav .tg:hover{border-color:var(--accent);color:var(--accent)}
 .pdfs{margin:26px 0}
 .pdfs h2{border:0;margin:0 0 .4em}
 .pdfs a{display:inline-block;margin:4px 8px 4px 0;padding:6px 14px;border:1px solid var(--accent);border-radius:99px;text-decoration:none}
@@ -72,7 +77,7 @@ table code{white-space:nowrap}
 #pop .bar button{font:inherit;border:0;background:var(--accent);color:#fff;border-radius:99px;padding:4px 14px;cursor:pointer}
 #pop h2,#pop h3,#pop h4{margin-top:1em;border:0;padding-top:0}
 @media print{body{background:#fff;color:#000}img,table{box-shadow:none}header.nav{display:none}}
-</style></head><body><header class="nav"><div><b>Охота на медведя</b><a href="../index.html">Главная</a><a href="../01-pamyatka/index.html">Памятка</a><a href="../02-prostymi-slovami/index.html">Простыми словами</a><a href="../03-pochemu-tak/index.html">Почему так</a><a href="../04-matematika/index.html" class="cur">Математика</a><a class="pdf" href="../download/Медведь_04_Математика.pdf" download="Медведь_04_Математика.pdf" title="Скачать этот гайд в PDF">⬇ PDF</a></div></header><main><h1 id="охота-на-медведя-математика">Охота на медведя: математика</h1>
+</style></head><body><header class="nav"><div><b>Охота на медведя</b><a href="../index.html">Главная</a><a href="../01-pamyatka/index.html">Памятка</a><a href="../02-prostymi-slovami/index.html">Простыми словами</a><a href="../03-pochemu-tak/index.html">Почему так</a><a href="../04-matematika/index.html" class="cur">Математика</a><a class="pdf" href="../download/Медведь_04_Математика.pdf" download="Медведь_04_Математика.pdf" title="Скачать этот гайд в PDF">⬇ PDF</a><button class="tg" id="tg" type="button" aria-label="Сменить тему"></button></div></header><main><h1 id="охота-на-медведя-математика">Охота на медведя: математика</h1>
 <p><strong>Гайды:</strong> <a href="../index.html">Главная</a> · <a href="../01-pamyatka/index.html">Памятка</a> · <a href="../02-prostymi-slovami/index.html">Простыми словами</a> · <a href="../03-pochemu-tak/index.html">Почему так</a> · Математика (вы здесь)</p>
 <p><em>Последний уровень: формулы целиком, с выводом и числами. Уровень математики не выше девятого класса: корни, неравенство <code>(a − b)² ≥ 0</code>, проценты и таблицы. Если что-то непонятно, вернитесь в «Почему так»: там то же самое, но медленнее.</em></p><details class="toc"><summary>Содержание</summary><ol><li><a href="#0-договоримся-об-обозначениях">0. Договоримся об обозначениях</a></li><li><a href="#1-модель-урона-участника">1. Модель урона участника</a></li><li><a href="#2-почему-корень-требует-равных-частей">2. Почему корень требует равных частей</a></li><li><a href="#3-состав-войск">3. Состав войск</a></li><li><a href="#4-уровни-войск-и-отдача-типов">4. Уровни войск и отдача типов</a></li><li><a href="#5-атака--смертоносность">5. Атака × смертоносность</a></li><li><a href="#6-навыки-героев">6. Навыки героев</a></li><li><a href="#7-четыре-места-присоединившихся">7. Четыре места присоединившихся</a></li><li><a href="#8-как-выбрать-героя-расчёт-на-примере">8. Как выбрать героя: расчёт на примере</a></li><li><a href="#9-разбор-одного-рейда">9. Разбор одного рейда</a></li><li><a href="#10-как-сравнить-два-рейда">10. Как сравнить два рейда</a></li><li><a href="#11-насколько-точна-модель">11. Насколько точна модель</a></li><li><a href="#12-задачи-с-решениями">12. Задачи с решениями</a></li><li><a href="#13-короткая-шпаргалка-формул">13. Короткая шпаргалка формул</a></li></ol></details>
 <blockquote><p><strong>Сначала переучите войска до самого высокого доступного уровня, потом обучайте новых.</strong> Шаг уровня <code>u ≈ 1,19</code> входит в урон линейно, а число солдат под корнем, поэтому переобучение на уровень выше равносильно <code>u² ≈ 1,42</code> по численности, не требует мест в марше и за партию в лагере охватывает примерно в 7 раз больше бойцов, чем обучение новых: вывод и сравнение по времени в <a href="#4-уровни-войск-и-отдача-типов">п. 4</a>, «Переучить или обучить новых?».</p></blockquote>
@@ -283,5 +288,15 @@ document.addEventListener('click',function(ev){
   if(ev.target===pop||ev.target.id==='popx')pop.classList.remove('on');
 });
 document.addEventListener('keydown',function(ev){if(ev.key==='Escape')pop.classList.remove('on');if((ev.key==='Enter'||ev.key===' ')&&ev.target.classList&&ev.target.classList.contains('spoiler')){ev.preventDefault();ev.target.classList.toggle('open')}});
+})();
+</script><script>
+(function(){
+var tg=document.getElementById('tg');if(!tg)return;
+var SUN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.9 1.9M16.8 16.8l1.9 1.9M18.7 5.3l-1.9 1.9M7.2 16.8l-1.9 1.9"/></svg>';
+var MOON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a.7.7 0 0 0-.9-.9A9.6 9.6 0 1 0 21.4 15.5a.7.7 0 0 0-.9-.9z"/></svg>';
+function cur(){return document.documentElement.getAttribute('data-theme')==='dark'?'dark':'light'}
+function draw(){var d=cur()==='dark';tg.innerHTML=d?SUN:MOON;tg.title=d?'Включить светлую тему':'Включить тёмную тему'}
+tg.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('bear-theme',n)}catch(e){}draw()});
+draw();
 })();
 </script></body></html>
