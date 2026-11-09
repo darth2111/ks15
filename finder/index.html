@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Сплочение искателя — карта</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="top">
+  <h1>Сплочение искателя</h1>
+  <select id="roomSel" aria-label="Комната" hidden></select>
+  <span id="roomTitle" class="room-title"></span>
+  <nav class="tabs">
+    <button class="tab on" data-tab="map">Карта</button>
+    <button class="tab" data-tab="sim">Симуляция</button>
+  </nav>
+</header>
+<main id="map" aria-label="Карта предметов"></main>
+<section id="sim" aria-label="Симуляция" hidden></section>
+<p id="status" class="status">Загрузка…</p>
+<script src="js/layout.js"></script>
+<script src="js/map.js"></script>
+<script src="js/sim.js"></script>
+</body>
+</html>

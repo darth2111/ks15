@@ -1,0 +1,770 @@
+{
+ "id": "command-center",
+ "title": "Командный центр",
+ "size": [
+  546,
+  896
+ ],
+ "plate": "plate.webp",
+ "full": "full.webp",
+ "items": [
+  {
+   "id": "i01",
+   "name": "Барабан",
+   "kind": "sprite",
+   "sprite": "sprites/i01.webp",
+   "bbox": [
+    439,
+    734,
+    89,
+    93
+   ],
+   "anchor": [
+    478.5,
+    780.1
+   ],
+   "seen": 16,
+   "votes": 10,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i02",
+   "name": "Блокнот",
+   "kind": "sprite",
+   "sprite": "sprites/i02.webp",
+   "bbox": [
+    211,
+    605,
+    82,
+    65
+   ],
+   "anchor": [
+    250.0,
+    636.7
+   ],
+   "seen": 14,
+   "votes": 11,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i03",
+   "name": "Головной убор",
+   "kind": "sprite",
+   "sprite": "sprites/i03.webp",
+   "bbox": [
+    189,
+    274,
+    51,
+    50
+   ],
+   "anchor": [
+    215.5,
+    298.5
+   ],
+   "seen": 16,
+   "votes": 14,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i04",
+   "name": "Голубь",
+   "kind": "sprite",
+   "sprite": "sprites/i04.webp",
+   "bbox": [
+    111,
+    258,
+    40,
+    43
+   ],
+   "anchor": [
+    132.6,
+    281.1
+   ],
+   "seen": 17,
+   "votes": 12,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i36",
+   "name": "Е",
+   "kind": "engraving",
+   "sprite": "sprites/i36.webp",
+   "bbox": [
+    430,
+    660,
+    31,
+    41
+   ],
+   "anchor": [
+    442.9,
+    681.7
+   ],
+   "seen": 5,
+   "votes": 0,
+   "quality": "ok",
+   "verified": true
+  },
+  {
+   "id": "i05",
+   "name": "Замок",
+   "kind": "sprite",
+   "sprite": "sprites/i05.webp",
+   "bbox": [
+    75,
+    526,
+    100,
+    94
+   ],
+   "anchor": [
+    127.4,
+    575.7
+   ],
+   "seen": 17,
+   "votes": 12,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i06",
+   "name": "Золотые монеты",
+   "kind": "sprite",
+   "sprite": "sprites/i06.webp",
+   "bbox": [
+    68,
+    595,
+    35,
+    33
+   ],
+   "anchor": [
+    84.9,
+    611.3
+   ],
+   "seen": 13,
+   "votes": 9,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i07",
+   "name": "Игрушечный солдатик",
+   "kind": "sprite",
+   "sprite": "sprites/i07.webp",
+   "bbox": [
+    284,
+    504,
+    44,
+    48
+   ],
+   "anchor": [
+    305.4,
+    527.9
+   ],
+   "seen": 19,
+   "votes": 17,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i08",
+   "name": "Карта",
+   "kind": "sprite",
+   "sprite": "sprites/i08.webp",
+   "bbox": [
+    178,
+    531,
+    76,
+    46
+   ],
+   "anchor": [
+    216.7,
+    553.7
+   ],
+   "seen": 17,
+   "votes": 14,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i09",
+   "name": "Катапульта",
+   "kind": "sprite",
+   "sprite": "sprites/i09.webp",
+   "bbox": [
+    465,
+    470,
+    34,
+    38
+   ],
+   "anchor": [
+    481.6,
+    488.9
+   ],
+   "seen": 16,
+   "votes": 15,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i10",
+   "name": "Ключ",
+   "kind": "sprite",
+   "sprite": "sprites/i10.webp",
+   "bbox": [
+    382,
+    663,
+    32,
+    70
+   ],
+   "anchor": [
+    397.7,
+    699.1
+   ],
+   "seen": 15,
+   "votes": 13,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i11",
+   "name": "Компас",
+   "kind": "sprite",
+   "sprite": "sprites/i11.webp",
+   "bbox": [
+    318,
+    576,
+    45,
+    37
+   ],
+   "anchor": [
+    339.8,
+    594.4
+   ],
+   "seen": 2,
+   "votes": 1,
+   "quality": "ok",
+   "verified": true
+  },
+  {
+   "id": "i12",
+   "name": "Конверт",
+   "kind": "sprite",
+   "sprite": "sprites/i12.webp",
+   "bbox": [
+    277,
+    606,
+    80,
+    49
+   ],
+   "anchor": [
+    316.8,
+    629.3
+   ],
+   "seen": 18,
+   "votes": 14,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i13",
+   "name": "Корм для собак",
+   "kind": "sprite",
+   "sprite": "sprites/i13.webp",
+   "bbox": [
+    141,
+    783,
+    80,
+    63
+   ],
+   "anchor": [
+    183.6,
+    814.4
+   ],
+   "seen": 11,
+   "votes": 9,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i14",
+   "name": "Кубок",
+   "kind": "sprite",
+   "sprite": "sprites/i14.webp",
+   "bbox": [
+    77,
+    479,
+    56,
+    66
+   ],
+   "anchor": [
+    103.4,
+    508.8
+   ],
+   "seen": 16,
+   "votes": 11,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i15",
+   "name": "Ластик для доски",
+   "kind": "sprite",
+   "sprite": "sprites/i15.webp",
+   "bbox": [
+    178,
+    367,
+    30,
+    34
+   ],
+   "anchor": [
+    192.5,
+    383.7
+   ],
+   "seen": 17,
+   "votes": 13,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i16",
+   "name": "Лупа",
+   "kind": "sprite",
+   "sprite": "sprites/i16.webp",
+   "bbox": [
+    361,
+    575,
+    60,
+    38
+   ],
+   "anchor": [
+    387.5,
+    593.9
+   ],
+   "seen": 15,
+   "votes": 10,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i35",
+   "name": "М",
+   "kind": "engraving",
+   "sprite": "sprites/i35.webp",
+   "bbox": [
+    120,
+    735,
+    79,
+    26
+   ],
+   "anchor": [
+    160.8,
+    748.2
+   ],
+   "seen": 15,
+   "votes": 0,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i17",
+   "name": "Маленький мост",
+   "kind": "sprite",
+   "sprite": "sprites/i17.webp",
+   "bbox": [
+    87,
+    612,
+    62,
+    54
+   ],
+   "anchor": [
+    117.9,
+    638.8
+   ],
+   "seen": 14,
+   "votes": 12,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i18",
+   "name": "Очки",
+   "kind": "sprite",
+   "sprite": "sprites/i18.webp",
+   "bbox": [
+    296,
+    640,
+    62,
+    36
+   ],
+   "anchor": [
+    327.5,
+    657.6
+   ],
+   "seen": 13,
+   "votes": 12,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i19",
+   "name": "Парусная лодка",
+   "kind": "sprite",
+   "sprite": "sprites/i19.webp",
+   "bbox": [
+    244,
+    525,
+    65,
+    74
+   ],
+   "anchor": [
+    274.9,
+    565.7
+   ],
+   "seen": 15,
+   "votes": 13,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i20",
+   "name": "Паук",
+   "kind": "sprite",
+   "sprite": "sprites/i20.webp",
+   "bbox": [
+    280,
+    206,
+    30,
+    51
+   ],
+   "anchor": [
+    294.5,
+    237.1
+   ],
+   "seen": 16,
+   "votes": 13,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i21",
+   "name": "Перчатки",
+   "kind": "sprite",
+   "sprite": "sprites/i21.webp",
+   "bbox": [
+    238,
+    454,
+    48,
+    37
+   ],
+   "anchor": [
+    261.9,
+    472.3
+   ],
+   "seen": 15,
+   "votes": 15,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i22",
+   "name": "Песочные часы",
+   "kind": "sprite",
+   "sprite": "sprites/i22.webp",
+   "bbox": [
+    48,
+    619,
+    43,
+    68
+   ],
+   "anchor": [
+    69.8,
+    652.9
+   ],
+   "seen": 9,
+   "votes": 5,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i23",
+   "name": "Печать",
+   "kind": "sprite",
+   "sprite": "sprites/i23.webp",
+   "bbox": [
+    169,
+    569,
+    39,
+    45
+   ],
+   "anchor": [
+    188.2,
+    593.2
+   ],
+   "seen": 2,
+   "votes": 2,
+   "quality": "ok",
+   "verified": true
+  },
+  {
+   "id": "i24",
+   "name": "Пистолет",
+   "kind": "sprite",
+   "sprite": "sprites/i24.webp",
+   "bbox": [
+    117,
+    443,
+    68,
+    44
+   ],
+   "anchor": [
+    147.4,
+    463.5
+   ],
+   "seen": 14,
+   "votes": 9,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i25",
+   "name": "Писчее перо",
+   "kind": "sprite",
+   "sprite": "sprites/i25.webp",
+   "bbox": [
+    395,
+    491,
+    66,
+    110
+   ],
+   "anchor": [
+    426.4,
+    546.5
+   ],
+   "seen": 16,
+   "votes": 13,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i26",
+   "name": "Пушка",
+   "kind": "sprite",
+   "sprite": "sprites/i26.webp",
+   "bbox": [
+    119,
+    615,
+    80,
+    86
+   ],
+   "anchor": [
+    162.3,
+    661.3
+   ],
+   "seen": 14,
+   "votes": 9,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i27",
+   "name": "Свиток",
+   "kind": "sprite",
+   "sprite": "sprites/i27.webp",
+   "bbox": [
+    24,
+    547,
+    64,
+    45
+   ],
+   "anchor": [
+    56.3,
+    569.6
+   ],
+   "seen": 14,
+   "votes": 13,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i28",
+   "name": "Скомканная бумага",
+   "kind": "sprite",
+   "sprite": "sprites/i28.webp",
+   "bbox": [
+    201,
+    647,
+    31,
+    34
+   ],
+   "anchor": [
+    215.8,
+    664.2
+   ],
+   "seen": 16,
+   "votes": 14,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i29",
+   "name": "Солнце",
+   "kind": "sprite",
+   "sprite": "sprites/i29.webp",
+   "bbox": [
+    124,
+    330,
+    57,
+    58
+   ],
+   "anchor": [
+    152.0,
+    360.1
+   ],
+   "seen": 17,
+   "votes": 12,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i30",
+   "name": "Треугольник",
+   "kind": "sprite",
+   "sprite": "sprites/i30.webp",
+   "bbox": [
+    180,
+    313,
+    42,
+    56
+   ],
+   "anchor": [
+    200.0,
+    342.5
+   ],
+   "seen": 18,
+   "votes": 15,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i31",
+   "name": "Фонарь",
+   "kind": "sprite",
+   "sprite": "sprites/i31.webp",
+   "bbox": [
+    167,
+    419,
+    50,
+    60
+   ],
+   "anchor": [
+    196.2,
+    453.3
+   ],
+   "seen": 1,
+   "votes": 1,
+   "quality": "ok",
+   "verified": true
+  },
+  {
+   "id": "i32",
+   "name": "Цветок",
+   "kind": "sprite",
+   "sprite": "sprites/i32.webp",
+   "bbox": [
+    469,
+    424,
+    27,
+    42
+   ],
+   "anchor": [
+    482.5,
+    444.8
+   ],
+   "seen": 14,
+   "votes": 13,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i37",
+   "name": "Четырехлистный клевер",
+   "kind": "engraving",
+   "sprite": "sprites/i37.webp",
+   "bbox": [
+    259,
+    673,
+    45,
+    28
+   ],
+   "anchor": [
+    279.7,
+    686.2
+   ],
+   "seen": 20,
+   "votes": 0,
+   "quality": "faint",
+   "verified": false
+  },
+  {
+   "id": "i33",
+   "name": "Шишка",
+   "kind": "sprite",
+   "sprite": "sprites/i33.webp",
+   "bbox": [
+    229,
+    779,
+    40,
+    47
+   ],
+   "anchor": [
+    248.6,
+    803.1
+   ],
+   "seen": 16,
+   "votes": 12,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i34",
+   "name": "Ящик стола",
+   "kind": "sprite",
+   "sprite": "sprites/i34.webp",
+   "bbox": [
+    493,
+    423,
+    53,
+    59
+   ],
+   "anchor": [
+    522.3,
+    453.3
+   ],
+   "seen": 17,
+   "votes": 11,
+   "quality": "ok",
+   "verified": false
+  }
+ ],
+ "rules": {
+  "targets": 26,
+  "timerSec": 75,
+  "basePoints": 100,
+  "accuracyStart": 2000,
+  "accuracyPenalty": 200,
+  "speedPerSec": 200,
+  "graceMs": 1000,
+  "offListIsMiss": true,
+  "multiplier": {
+   "maxCells": 6,
+   "gainPerFind": "L = min(6, ceil(L) + 1)",
+   "holdSec": 0,
+   "decayCellsPerSec": 0.8,
+   "points": "100 * L (cells lit right after the find)",
+   "note": "fitted on 18 rounds (bar measured on video): no decay for holdSec after a find, then decayCellsPerSec; mean abs error ~3.5% of item points"
+  }
+ }
+}
