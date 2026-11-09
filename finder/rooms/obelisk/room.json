@@ -1,0 +1,750 @@
+{
+ "id": "obelisk",
+ "title": "Обелиск",
+ "size": [
+  546,
+  896
+ ],
+ "plate": "plate.webp",
+ "full": "full.webp",
+ "items": [
+  {
+   "id": "i01",
+   "name": "Белка",
+   "kind": "sprite",
+   "sprite": "sprites/i01.webp",
+   "bbox": [
+    321,
+    495,
+    55,
+    64
+   ],
+   "anchor": [
+    348.5,
+    527.7
+   ],
+   "seen": 7,
+   "votes": 6,
+   "quality": "unchecked",
+   "verified": true
+  },
+  {
+   "id": "i02",
+   "name": "Букет",
+   "kind": "sprite",
+   "sprite": "sprites/i02.webp",
+   "bbox": [
+    473,
+    558,
+    63,
+    50
+   ],
+   "anchor": [
+    499.9,
+    584.5
+   ],
+   "seen": 15,
+   "votes": 14,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i03",
+   "name": "Бумажный самолетик",
+   "kind": "sprite",
+   "sprite": "sprites/i03.webp",
+   "bbox": [
+    65,
+    199,
+    37,
+    25
+   ],
+   "anchor": [
+    83.3,
+    211.2
+   ],
+   "seen": 16,
+   "votes": 10,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i04",
+   "name": "Венок",
+   "kind": "sprite",
+   "sprite": "sprites/i04.webp",
+   "bbox": [
+    62,
+    635,
+    65,
+    67
+   ],
+   "anchor": [
+    94.1,
+    668.4
+   ],
+   "seen": 16,
+   "votes": 10,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i05",
+   "name": "Веревка",
+   "kind": "sprite",
+   "sprite": "sprites/i05.webp",
+   "bbox": [
+    32,
+    522,
+    43,
+    33
+   ],
+   "anchor": [
+    53.4,
+    537.2
+   ],
+   "seen": 15,
+   "votes": 12,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i06",
+   "name": "Воздушный змей",
+   "kind": "sprite",
+   "sprite": "sprites/i06.webp",
+   "bbox": [
+    449,
+    28,
+    71,
+    80
+   ],
+   "anchor": [
+    478.6,
+    62.1
+   ],
+   "seen": 7,
+   "votes": 5,
+   "quality": "unchecked",
+   "verified": true
+  },
+  {
+   "id": "i07",
+   "name": "Воздушный шар",
+   "kind": "sprite",
+   "sprite": "sprites/i07.webp",
+   "bbox": [
+    98,
+    29,
+    116,
+    163
+   ],
+   "anchor": [
+    152.9,
+    97.8
+   ],
+   "seen": 17,
+   "votes": 15,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i08",
+   "name": "Головной убор",
+   "kind": "sprite",
+   "sprite": "sprites/i08.webp",
+   "bbox": [
+    375,
+    675,
+    86,
+    59
+   ],
+   "anchor": [
+    413.4,
+    707.0
+   ],
+   "seen": 15,
+   "votes": 11,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i09",
+   "name": "Голубь",
+   "kind": "sprite",
+   "sprite": "sprites/i09.webp",
+   "bbox": [
+    364,
+    159,
+    35,
+    29
+   ],
+   "anchor": [
+    381.9,
+    172.0
+   ],
+   "seen": 16,
+   "votes": 12,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i10",
+   "name": "Грибы",
+   "kind": "sprite",
+   "sprite": "sprites/i10.webp",
+   "bbox": [
+    505,
+    641,
+    40,
+    39
+   ],
+   "anchor": [
+    524.8,
+    658.1
+   ],
+   "seen": 15,
+   "votes": 11,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i11",
+   "name": "Деревянная ложка",
+   "kind": "sprite",
+   "sprite": "sprites/i11.webp",
+   "bbox": [
+    306,
+    703,
+    71,
+    40
+   ],
+   "anchor": [
+    342.5,
+    724.4
+   ],
+   "seen": 6,
+   "votes": 6,
+   "quality": "unchecked",
+   "verified": true
+  },
+  {
+   "id": "i12",
+   "name": "Драгоценный камень",
+   "kind": "sprite",
+   "sprite": "sprites/i12.webp",
+   "bbox": [
+    246,
+    256,
+    31,
+    33
+   ],
+   "anchor": [
+    260.8,
+    272.4
+   ],
+   "seen": 12,
+   "votes": 11,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i13",
+   "name": "Дрова",
+   "kind": "sprite",
+   "sprite": "sprites/i13.webp",
+   "bbox": [
+    60,
+    531,
+    64,
+    46
+   ],
+   "anchor": [
+    92.3,
+    554.6
+   ],
+   "seen": 11,
+   "votes": 5,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i14",
+   "name": "Железный топор",
+   "kind": "sprite",
+   "sprite": "sprites/i14.webp",
+   "bbox": [
+    416,
+    571,
+    66,
+    42
+   ],
+   "anchor": [
+    446.9,
+    593.0
+   ],
+   "seen": 12,
+   "votes": 9,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i15",
+   "name": "Желуди",
+   "kind": "sprite",
+   "sprite": "sprites/i15.webp",
+   "bbox": [
+    3,
+    664,
+    28,
+    27
+   ],
+   "anchor": [
+    16.3,
+    676.7
+   ],
+   "seen": 16,
+   "votes": 15,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i16",
+   "name": "Колокол",
+   "kind": "sprite",
+   "sprite": "sprites/i16.webp",
+   "bbox": [
+    416,
+    353,
+    34,
+    35
+   ],
+   "anchor": [
+    432.0,
+    370.5
+   ],
+   "seen": 16,
+   "votes": 10,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i17",
+   "name": "Компас",
+   "kind": "sprite",
+   "sprite": "sprites/i17.webp",
+   "bbox": [
+    256,
+    518,
+    52,
+    44
+   ],
+   "anchor": [
+    280.2,
+    542.4
+   ],
+   "seen": 16,
+   "votes": 12,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i18",
+   "name": "Корзина",
+   "kind": "sprite",
+   "sprite": "sprites/i18.webp",
+   "bbox": [
+    140,
+    602,
+    103,
+    87
+   ],
+   "anchor": [
+    200.6,
+    650.7
+   ],
+   "seen": 11,
+   "votes": 8,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i19",
+   "name": "Лейка",
+   "kind": "sprite",
+   "sprite": "sprites/i19.webp",
+   "bbox": [
+    408,
+    505,
+    83,
+    58
+   ],
+   "anchor": [
+    447.9,
+    536.8
+   ],
+   "seen": 1,
+   "votes": 1,
+   "quality": "unchecked",
+   "verified": true
+  },
+  {
+   "id": "i20",
+   "name": "Масляная лампа",
+   "kind": "sprite",
+   "sprite": "sprites/i20.webp",
+   "bbox": [
+    7,
+    533,
+    44,
+    64
+   ],
+   "anchor": [
+    26.6,
+    570.4
+   ],
+   "seen": 15,
+   "votes": 11,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i21",
+   "name": "Метла",
+   "kind": "sprite",
+   "sprite": "sprites/i21.webp",
+   "bbox": [
+    450,
+    444,
+    28,
+    69
+   ],
+   "anchor": [
+    465.3,
+    485.5
+   ],
+   "seen": 15,
+   "votes": 13,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i22",
+   "name": "Мешочек",
+   "kind": "sprite",
+   "sprite": "sprites/i22.webp",
+   "bbox": [
+    352,
+    582,
+    87,
+    94
+   ],
+   "anchor": [
+    391.8,
+    633.8
+   ],
+   "seen": 16,
+   "votes": 13,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i23",
+   "name": "Молния",
+   "kind": "sprite",
+   "sprite": "sprites/i23.webp",
+   "bbox": [
+    393,
+    235,
+    33,
+    69
+   ],
+   "anchor": [
+    409.9,
+    268.7
+   ],
+   "seen": 11,
+   "votes": 10,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i24",
+   "name": "Молот",
+   "kind": "sprite",
+   "sprite": "sprites/i24.webp",
+   "bbox": [
+    383,
+    744,
+    104,
+    62
+   ],
+   "anchor": [
+    429.2,
+    773.0
+   ],
+   "seen": 14,
+   "votes": 10,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i25",
+   "name": "Палатка",
+   "kind": "sprite",
+   "sprite": "sprites/i25.webp",
+   "bbox": [
+    0,
+    242,
+    64,
+    62
+   ],
+   "anchor": [
+    31.6,
+    279.9
+   ],
+   "seen": 13,
+   "votes": 9,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i26",
+   "name": "Пещера",
+   "kind": "sprite",
+   "sprite": "sprites/i26.webp",
+   "bbox": [
+    416,
+    253,
+    93,
+    93
+   ],
+   "anchor": [
+    463.2,
+    302.6
+   ],
+   "seen": 17,
+   "votes": 10,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i27",
+   "name": "Птичье гнездо",
+   "kind": "sprite",
+   "sprite": "sprites/i27.webp",
+   "bbox": [
+    106,
+    377,
+    33,
+    30
+   ],
+   "anchor": [
+    122.0,
+    390.9
+   ],
+   "seen": 12,
+   "votes": 10,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i28",
+   "name": "Секатор",
+   "kind": "sprite",
+   "sprite": "sprites/i28.webp",
+   "bbox": [
+    221,
+    713,
+    70,
+    52
+   ],
+   "anchor": [
+    255.1,
+    737.9
+   ],
+   "seen": 15,
+   "votes": 13,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i29",
+   "name": "След лапы",
+   "kind": "sprite",
+   "sprite": "sprites/i29.webp",
+   "bbox": [
+    229,
+    843,
+    48,
+    39
+   ],
+   "anchor": [
+    256.0,
+    863.0
+   ],
+   "seen": 15,
+   "votes": 11,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i30",
+   "name": "Следы когтей",
+   "kind": "sprite",
+   "sprite": "sprites/i30.webp",
+   "bbox": [
+    253,
+    434,
+    38,
+    47
+   ],
+   "anchor": [
+    273.0,
+    455.7
+   ],
+   "seen": 16,
+   "votes": 15,
+   "quality": "ok",
+   "verified": false
+  },
+  {
+   "id": "i31",
+   "name": "Смотровая башня",
+   "kind": "sprite",
+   "sprite": "sprites/i31.webp",
+   "bbox": [
+    427,
+    102,
+    59,
+    135
+   ],
+   "anchor": [
+    457.0,
+    175.4
+   ],
+   "seen": 16,
+   "votes": 11,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i32",
+   "name": "Сова",
+   "kind": "sprite",
+   "sprite": "sprites/i32.webp",
+   "bbox": [
+    53,
+    366,
+    30,
+    37
+   ],
+   "anchor": [
+    68.5,
+    384.4
+   ],
+   "seen": 14,
+   "votes": 9,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i33",
+   "name": "Совок",
+   "kind": "sprite",
+   "sprite": "sprites/i33.webp",
+   "bbox": [
+    392,
+    803,
+    96,
+    77
+   ],
+   "anchor": [
+    441.8,
+    842.7
+   ],
+   "seen": 16,
+   "votes": 13,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i34",
+   "name": "Тележка",
+   "kind": "sprite",
+   "sprite": "sprites/i34.webp",
+   "bbox": [
+    132,
+    515,
+    117,
+    94
+   ],
+   "anchor": [
+    195.1,
+    565.9
+   ],
+   "seen": 16,
+   "votes": 12,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i35",
+   "name": "Флажки",
+   "kind": "sprite",
+   "sprite": "sprites/i35.webp",
+   "bbox": [
+    339,
+    392,
+    130,
+    42
+   ],
+   "anchor": [
+    403.9,
+    413.6
+   ],
+   "seen": 17,
+   "votes": 16,
+   "quality": "unchecked",
+   "verified": false
+  },
+  {
+   "id": "i36",
+   "name": "Шарики",
+   "kind": "sprite",
+   "sprite": "sprites/i36.webp",
+   "bbox": [
+    491,
+    211,
+    48,
+    84
+   ],
+   "anchor": [
+    516.0,
+    244.1
+   ],
+   "seen": 16,
+   "votes": 11,
+   "quality": "unchecked",
+   "verified": false
+  }
+ ],
+ "rules": {
+  "targets": 26,
+  "timerSec": 75,
+  "basePoints": 100,
+  "accuracyStart": 2000,
+  "accuracyPenalty": 200,
+  "speedPerSec": 200,
+  "graceMs": 1000,
+  "offListIsMiss": true,
+  "multiplier": {
+   "maxCells": 6,
+   "gainPerFind": "L = min(6, ceil(L) + 1)",
+   "holdSec": 0,
+   "decayCellsPerSec": 0.8,
+   "points": "100 * L (cells lit right after the find)",
+   "note": "fitted on 18 rounds (bar measured on video): no decay for holdSec after a find, then decayCellsPerSec; mean abs error ~3.5% of item points"
+  }
+ }
+}

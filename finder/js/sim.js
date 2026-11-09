@@ -1,5 +1,5 @@
 /* Solo simulator of the "Seeker's Unity" mini-game.
-   Rules (fitted from the recorded game, see PLAN.md): 26 targets of the room's pool, list window of 6 (2x3, shifts left on a find),
+   Rules (fitted from the recorded game, see PLAN.md): 26 targets of the room's pool, list of 6 slots (2x3; a found item's text is replaced in place by the next one; when the queue is empty the rest shift left),
    75 s timer, points per find = 100 * multiplier-bar cells, accuracy 2000 - 200 per error, speed = remaining seconds * 200. */
 (function () {
   'use strict';
@@ -203,21 +203,23 @@
   }
   function updateCounter() { els.count.innerHTML = `<b>${round.found.size}</b>/${rules.targets}`; }
 
-  // ------------------------------------------------------------ list (window of 6, shifts left)
+  // ------------------------------------------------------------ list (6 fixed slot elements; texts replaced in place, shift left once the queue is empty)
   function renderList(initial) {
     const list = els.list;
-    if (initial) { list.innerHTML = ''; round.btn = new Map(); }
-    // remove buttons that left the window
-    for (const [i, b] of round.btn) if (!round.visible.includes(i)) { b.classList.add('out'); setTimeout(() => b.remove(), 250); round.btn.delete(i); }
-    round.visible.forEach((i, slot) => {
-      let b = round.btn.get(i);
-      if (!b) {
-        b = document.createElement('div'); b.className = 'item' + (R.items[i].name.split(' ').some(w => w.length > 12) ? ' long' : ''); b.innerHTML = '<span></span>'; b.firstChild.textContent = R.items[i].name;
-        b.style.setProperty('--c', 2); b.style.setProperty('--r', 1);   // enters at the end
-        list.append(b); round.btn.set(i, b);
-        void b.offsetWidth;
+    if (initial) {
+      list.innerHTML = ''; round.slots = [];
+      for (let slot = 0; slot < 6; slot++) {
+        const b = document.createElement('div'); b.className = 'item'; b.innerHTML = '<span></span>';
+        b.style.setProperty('--c', slot % 3); b.style.setProperty('--r', Math.floor(slot / 3));
+        list.append(b); round.slots.push(b);
       }
-      b.style.setProperty('--c', slot % 3); b.style.setProperty('--r', Math.floor(slot / 3));
+    }
+    round.visible.forEach((i, slot) => {
+      const b = round.slots[slot], span = b.firstChild;
+      const name = i == null ? '' : R.items[i].name;
+      if (span.textContent !== name) span.textContent = name;     // same element, only the text changes
+      b.classList.toggle('empty', i == null);
+      b.classList.toggle('long', name.split(' ').some(w => w.length > 12));
     });
   }
 
@@ -271,9 +273,11 @@
     round.lastFind = now; round.tLast = now; round.recent.push({ i, t: now });
     it.simEl.classList.add('found'); setTimeout(() => { it.simEl.style.display = 'none'; it.simEl.classList.remove('found'); }, 420);
     fx(fmt(pts), 'pop', R.room.size[0] / 2, R.room.size[1] * 0.42, 1000);
-    // list: remove from window, remaining shift left, next from the queue enters at the end
-    round.visible.splice(round.visible.indexOf(i), 1);
-    if (round.queue.length) { const nx = round.queue.shift(); round.visible.push(nx); round.appear[nx] = (now - round.tStart); }
+    // list (as in the recorded game): while the queue has items, the found item's slot gets the next one and the other
+    // slots stay; once the queue is empty (fewer than 6 left) the later items shift one slot left to close the gap.
+    const slot = round.visible.indexOf(i);
+    if (round.queue.length) { const nx = round.queue.shift(); round.visible[slot] = nx; round.appear[nx] = (now - round.tStart); }
+    else { round.visible.splice(slot, 1); round.visible.push(null); }
     renderList(false); updateCounter(); updateBar(L);
     if (round.found.size >= rules.targets) endRound(true, now);
   }
@@ -330,7 +334,7 @@
           <tr><td>Очки за скорость</td><td>${fmt(res.speed)}</td></tr>
           <tr class="tot"><td>Итого</td><td>${fmt(res.total)}</td></tr>
         </table>
-        ${slow.length ? `<p class="hint">Дольше всего: ${slow.map(([n, t]) => n + ' ' + t.toFixed(1) + ' с').join(', ')}. Время у предмета на карте: секунды от предыдущей находки (а для только что появившихся в списке — от их появления) до тапа.</p>` : ''}
+        ${slow.length ? `<p class="hint">Дольше всего: ${slow.map(([n, t]) => n + ' ' + t.toFixed(1) + ' с').join(', ')}.</p>` : ''}
         <div class="btns"><button class="primary" id="btnNext" type="button">${last ? 'Итоги серии' : 'Следующая попытка ' + (k + 1)}</button><button id="btnMenu" type="button">Меню</button></div>
       </div>`;
     els.panel.querySelector('#btnNext').onclick = () => { if (last) setPhase('series'); else startCountdown(); };

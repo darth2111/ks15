@@ -258,12 +258,15 @@
     try {
       const idx = await get('rooms/index.json');
       const sel0 = $('#roomSel');
-      const id = params.get('room') || idx[0].id;
+      // newest room first; it opens by default (?room=<id> picks another one)
+      idx.sort((a, b) => (b.added || '').localeCompare(a.added || ''));
+      const want = params.get('room');
+      const id = want && idx.some(r => r.id === want) ? want : idx[0].id;
       if (idx.length > 1) {
         sel0.hidden = false;
         idx.forEach(r => sel0.add(new Option(r.title, r.id)));
         sel0.value = id;
-        sel0.onchange = () => { location.search = '?room=' + sel0.value; };
+        sel0.onchange = () => { location.search = '?room=' + sel0.value; };   // reload keeps #sim
       }
       base = 'rooms/' + id + '/';
       room = await get(base + 'room.json');

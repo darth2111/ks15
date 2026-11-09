@@ -27,7 +27,8 @@ body { background: var(--bg); color: var(--fg); font: 14px/1.35 Nunito, system-u
   border-bottom: 1px solid var(--line); flex: none; min-height: 40px; }
 .top h1 { font-size: 15px; margin: 0; white-space: nowrap; }
 .room-title { color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-#roomSel { font: inherit; padding: 2px 6px; background: var(--card); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; }
+#roomSel { font: inherit; font-weight: 700; padding: 3px 6px; background: var(--card); color: var(--fg); border: 1px solid var(--line); border-radius: 8px; min-width: 0; max-width: 46vw; text-overflow: ellipsis; }
+@media (max-width: 560px) { .top { gap: 6px; padding: 6px 8px; } .top h1 { display: none; } #roomSel { flex: 1 1 auto; max-width: none; } }
 .tabs { margin-left: auto; display: flex; gap: 4px; }
 .tab { font: inherit; font-weight: 700; padding: 4px 10px; border: 1px solid var(--line); background: transparent; color: var(--fg);
   border-radius: 999px; cursor: pointer; }
@@ -119,9 +120,9 @@ body { background: var(--bg); color: var(--fg); font: 14px/1.35 Nunito, system-u
 .list .item { position: absolute; left: calc(var(--c, 2) * 33.333% + 3px); top: calc(var(--r, 1) * 50% + 3px); width: calc(33.333% - 6px); height: calc(50% - 6px);
   display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 6px; font-weight: 700; font-size: 15px; line-height: 1.1;
   background: var(--lbl-bg); color: var(--lbl-fg); border: 1px solid var(--lbl-line); border-radius: 14px; box-shadow: 0 2px 0 rgba(0, 0, 0, .25);
-  transition: left .22s ease, top .22s ease, opacity .2s, transform .2s; overflow: hidden; }
+  overflow: hidden; }
 .list .item.long { font-size: 12.5px; }
-.list .item.out { opacity: 0; transform: scale(.85); }
+.list .item.empty { visibility: hidden; }
 .sim-bottom .panel { height: 100%; overflow: auto; padding: 4px 6px; }
 .panel .hint { color: var(--muted); font-size: 13px; margin: 4px 0 8px; }
 .panel h2 { font-size: 17px; margin: 2px 0 6px; }
